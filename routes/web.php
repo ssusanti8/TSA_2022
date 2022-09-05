@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,23 +37,32 @@ Route::get('/', function () {
 // });
 
 // Anymous function
-Route::get('/', function () {
-    echo "Selamat Datang";
-});
+// Route::get('/', function () {
+//     echo "Selamat Datang";
+// });
 
-Route::get('/about', function () {
-    echo "NIM: 2241727032 <br> Nama: SUSANTI <br> Kelas: TSA WEB B";
-});
+// Route::get('/about', function () {
+//     echo "NIM: 2241727032 <br> Nama: SUSANTI <br> Kelas: TSA WEB B";
+// });
 
 // Route::get('/articles/{id}', function ($id) {
 //     echo "Halaman Artikel dengan ID " .$id;
 // });
 
-Route::get('/articles/{id}', function ($id) {
-    echo "Ini merupakan halaman artikel dengan id " .$id;
-});
+// Route::get('/articles/{id}', function ($id) {
+//     echo "Ini merupakan halaman artikel dengan id " .$id;
+// });
 
+// Konsep Controller
+// Route::get('/', [PageController::class, 'index']);
 
+// Route::get('/about', [PageController::class, 'about']);
 
+// Route::get('/articles/{id}', [PageController::class, 'articles']);
 
+// konsep Single Action Controller 
+Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/articles/{id}', [ArticleController::class, 'show']);
