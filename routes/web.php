@@ -32,7 +32,24 @@ Route::get('/', function () {
 //     Route::get('posts/{id}', 'show');
 // });
 
-Route::get('/', function ($id) {
+// Anymous function
+Route::get('/', function () {
     echo "Selamat Datang";
 });
+
+Route::get('/about', function () {
+    echo "NIM: 2241727032 <br> Nama: SUSANTI <br> Kelas: TSA WEB B";
+});
+
+// Route::get('/articles/{id}', function ($id) {
+//     echo "Halaman Artikel dengan ID " .$id;
+// });
+
+Route::get('/articles/{id}', function ($id) {
+    echo "Ini merupakan halaman artikel dengan id " .$id;
+});
+
+
+
+
 
