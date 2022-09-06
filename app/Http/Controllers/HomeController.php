@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return 'Selamat Datang';
+        return '<h2>Selamat Datang</h2><br>Halaman Home company profile menggunakan Laravel';
     }
 
     /**
