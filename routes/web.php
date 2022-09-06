@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,9 +61,13 @@ Route::get('/', function () {
 
 // Route::get('/articles/{id}', [PageController::class, 'articles']);
 
-// konsep Single Action Controller 
-Route::get('/', [HomeController::class, 'index']);
+// konsep masing-masing Controller 
+// Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', [AboutController::class, 'index']);
+// Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/articles/{id}', [ArticleController::class, 'show']);
+// Route::get('/articles/{id}', [ArticleController::class, 'show']);
+
+// konsep Single Action Controller hanya 1 function dengan --invoke
+Route::get('/blog', BlogController::class);
+
