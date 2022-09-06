@@ -8,6 +8,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +82,17 @@ Route::get('/', [HomeController::class, 'index']);
 Route::prefix('category')->group(function (){
     Route::get('/{id}', [ProductController::class, 'show']);
 });
+
+// Halaman News Route Parameters
+Route::get('/news/{id?}', [NewsController::class, 'show']);
+
+// Halaman Program Route Prefix
+Route::prefix('program')->group(function (){
+    Route::get('/{id}', [ProgramController::class, 'show']);
+});
+
+// Halaman About Us Route biasa
+Route::get('/about-us', [PageController::class, 'aboutUs']);
+
+// Halaman Contact Us Route resource
+Route::resource('/contactUs', ContactController::class);

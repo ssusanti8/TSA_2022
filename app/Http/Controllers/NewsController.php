@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,22 +13,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        return 'Selamat Datang';
-    }
-
-    public function about()
-    {
-        return 'Nama: SUSANTI <br> NIM: 2241727032';
-    }
-
-    public function articles($id)
-    {
-        return 'Halaman Artikel dengan Id '.$id;
-    }
-
-    public function aboutUs()
-    {
-        return '<a href="https://www.educastudio.com/about-us">https://www.educastudio.com/about-us</a>';
+        //
     }
 
     /**
@@ -58,9 +43,12 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id = null){
+        if($id == null) return  '<a href = "https://www.educastudio.com/news">
+            https://www.educastudio.com/news</a>';
+        return '<a href = "https://www.educastudio.com/news/' .$id.'">
+        https://www.educastudio.com/news/' .$id.'</a>';
+    
     }
 
     /**
