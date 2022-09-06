@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +70,12 @@ Route::get('/', function () {
 // Route::get('/articles/{id}', [ArticleController::class, 'show']);
 
 // konsep Single Action Controller hanya 1 function dengan --invoke
-Route::get('/blog', BlogController::class);
+// Route::get('/blog', BlogController::class);
 
+// Halaman Home
+Route::get('/', [HomeController::class, 'index']);
+
+// Halaman Product Route Prefix
+Route::prefix('category')->group(function (){
+    Route::get('/{id}', [ProductController::class, 'show']);
+});
