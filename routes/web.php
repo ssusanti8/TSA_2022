@@ -96,3 +96,8 @@ Route::get('/about-us', [PageController::class, 'aboutUs']);
 
 // Halaman Contact Us Route resource
 Route::resource('/contactUs', ContactController::class);
+
+// Memanggil view dengan nama file
+Route::get('/hello', function () {
+    return view('hello', ['name' => 'SUSANTI']);
+});

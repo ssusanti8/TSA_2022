@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use Illuminate\Support\Facades\View;
 
 class PageController extends Controller
 {
@@ -29,6 +30,10 @@ class PageController extends Controller
     public function aboutUs()
     {
         return '<a href="https://www.educastudio.com/about-us">https://www.educastudio.com/about-us</a>';
+    }
+
+    public function blog(){
+        return View::make('hello', ['name' => 'SUSANTI']);
     }
 
     /**
